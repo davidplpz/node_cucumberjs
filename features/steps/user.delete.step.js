@@ -14,7 +14,6 @@ Given('El identificador de un usuario {string}', (id) => {
 
 Then('Se puede borrar y obtengo un {string}', (expectedResponse) => {
   let isDeleted = userService.delete(this.id);
-  console.log('El usuario es: ', isDeleted);
   assert(isDeleted === expectedResponse);
 });
 
@@ -27,6 +26,5 @@ Given(
 
 Then('No se puede borrar y obtengo un {string}', (expectedResponse) => {
   let isDeleted = userService.delete(this.id);
-  console.log('El usuario es: ', isDeleted);
   assert(isDeleted === expectedResponse);
 });
