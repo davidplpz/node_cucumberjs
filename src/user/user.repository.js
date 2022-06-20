@@ -31,9 +31,9 @@ class UserRepository {
     const user = this.find(id);
     if (user !== 'User not found') {
       this.users = this.users.filter((user) => user.getId() !== id);
-      return 'true';
+      return true;
     }
-    return 'false';
+    return false;
   }
 }
 

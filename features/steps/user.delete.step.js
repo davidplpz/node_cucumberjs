@@ -12,9 +12,9 @@ Given('El identificador de un usuario {string}', (id) => {
   this.id = userService.create(manager);
 });
 
-Then('Se puede borrar y obtengo un {string}', (expectedResponse) => {
+Then('Se puede borrar y obtengo un {word}', (expectedResponse) => {
   let isDeleted = userService.delete(this.id);
-  assert(isDeleted === expectedResponse);
+  assert.equal(isDeleted, expectedResponse === 'true');
 });
 
 Given(
@@ -24,7 +24,7 @@ Given(
   },
 );
 
-Then('No se puede borrar y obtengo un {string}', (expectedResponse) => {
+Then('No se puede borrar y obtengo un {word}', (expectedResponse) => {
   let isDeleted = userService.delete(this.id);
-  assert(isDeleted === expectedResponse);
+  assert.equal(isDeleted, expectedResponse === 'true');
 });
