@@ -1,4 +1,4 @@
-const { When, Then, Given } = require('@cucumber/cucumber');
+const { When, Then } = require('@cucumber/cucumber');
 const assert = require('assert');
 const User = require('../../src/user/user.model.js');
 const UserRepository = require('../../src/user/user.repository.js');
