@@ -5,13 +5,6 @@ class UserRepository {
   }
 
   create(user) {
-    if (
-      user.name === undefined ||
-      user.email === undefined ||
-      user.password === undefined
-    ) {
-      return 'Invalid user';
-    }
     const id = `asdf${this.nextId}`;
     user.setId(id);
     this.users.push(user);
@@ -28,12 +21,8 @@ class UserRepository {
   }
 
   delete(id) {
-    const user = this.find(id);
-    if (user !== 'User not found') {
-      this.users = this.users.filter((user) => user.getId() !== id);
-      return true;
-    }
-    return false;
+    this.users = this.users.filter((user) => user.getId() !== id);
+    return true;
   }
 }
 
